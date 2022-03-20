@@ -1,0 +1,21 @@
+{
+    "extends": [
+      "airbnb",
+      "airbnb/hooks"
+    ],
+    "plugins": ["react"],
+    "parserOptions": {
+      "ecmaFeatures": {
+        "jsx": true
+      },
+      "ecmaVersion": 2018,
+      "sourceType": "module"
+    },
+    "rules": {
+      "import/no-unresolved": 0,
+      "no-use-before-define": "off",
+      "import/extensions": ["error", "never"],
+      "react/prop-types": 0,
+      "no-shadow": "off"
+    }
+  }
