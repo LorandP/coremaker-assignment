@@ -1,10 +1,13 @@
 import { registerRootComponent } from "expo";
-import Root from "./js/Root";
+import { AuthProvider } from "./js/context/Auth";
+import RootNavigator from "./js/navigation/RootNavigator";
 
 export default function App() {
-    return (
-        <Root/>
-    )
+  return (
+    <AuthProvider>
+      <RootNavigator />
+    </AuthProvider>
+  );
 }
 
 registerRootComponent(App);

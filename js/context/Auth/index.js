@@ -5,7 +5,7 @@ const AuthContext = React.createContext(undefined);
 function AuthProvider({ children, values }) {
   const [isLoggedIn, setIsLoggedIn] = React.useState(false);
 
-  const values = {
+  const value = {
     isLoggedIn,
     ...values,
   };
