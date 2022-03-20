@@ -1,5 +1,6 @@
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
+import React from "react";
 import { useAuthContext } from "../context/Auth";
 import Login from "../screens/Login";
 import Profile from "../screens/Profile";
@@ -8,9 +9,15 @@ import { useNavigatorTheme } from "./hooks/useNavigatorTheme";
 const Stack = createStackNavigator();
 
 function RootNavigator() {
-  const { isLoggedIn } = useAuthContext();
+  const { isLoggedIn, handleAuthCheck } = useAuthContext();
   const { navigatorTheme } = useNavigatorTheme();
-  console.log({isLoggedIn});
+
+  React.useEffect(() => {
+    async function init() {
+      await handleAuthCheck();
+    }
+    init();
+  }, []);
 
   return (
     <NavigationContainer theme={navigatorTheme}>
